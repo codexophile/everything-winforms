@@ -32,8 +32,12 @@
             searchTextBox = new TextBox();
             searchButton = new Button();
             resultsListView = new ListView();
-            smallImageList = new ImageList(components);
             largeImageList = new ImageList(components);
+            smallImageList = new ImageList(components);
+            columnHeader1 = new ColumnHeader();
+            columnHeader2 = new ColumnHeader();
+            columnHeader3 = new ColumnHeader();
+            columnHeader4 = new ColumnHeader();
             SuspendLayout();
             // 
             // searchTextBox
@@ -54,6 +58,7 @@
             // 
             // resultsListView
             // 
+            resultsListView.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3, columnHeader4 });
             resultsListView.LargeImageList = largeImageList;
             resultsListView.Location = new Point(12, 41);
             resultsListView.Name = "resultsListView";
@@ -61,6 +66,13 @@
             resultsListView.SmallImageList = smallImageList;
             resultsListView.TabIndex = 2;
             resultsListView.UseCompatibleStateImageBehavior = false;
+            resultsListView.View = View.Details;
+            // 
+            // largeImageList
+            // 
+            largeImageList.ColorDepth = ColorDepth.Depth32Bit;
+            largeImageList.ImageSize = new Size(16, 16);
+            largeImageList.TransparentColor = Color.Transparent;
             // 
             // smallImageList
             // 
@@ -68,11 +80,21 @@
             smallImageList.ImageSize = new Size(16, 16);
             smallImageList.TransparentColor = Color.Transparent;
             // 
-            // largeImageList
+            // columnHeader1
             // 
-            largeImageList.ColorDepth = ColorDepth.Depth32Bit;
-            largeImageList.ImageSize = new Size(16, 16);
-            largeImageList.TransparentColor = Color.Transparent;
+            columnHeader1.Text = "Name";
+            // 
+            // columnHeader2
+            // 
+            columnHeader2.Text = "Folder";
+            // 
+            // columnHeader3
+            // 
+            columnHeader3.Text = "Size";
+            // 
+            // columnHeader4
+            // 
+            columnHeader4.Text = "Date Modified";
             // 
             // Form1
             // 
@@ -95,5 +117,9 @@
         private ListView resultsListView;
         private ImageList smallImageList;
         private ImageList largeImageList;
+        private ColumnHeader columnHeader1;
+        private ColumnHeader columnHeader2;
+        private ColumnHeader columnHeader3;
+        private ColumnHeader columnHeader4;
     }
 }
