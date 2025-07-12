@@ -54,9 +54,11 @@
             // 
             // resultsListView
             // 
+            resultsListView.LargeImageList = largeImageList;
             resultsListView.Location = new Point(12, 41);
             resultsListView.Name = "resultsListView";
             resultsListView.Size = new Size(776, 159);
+            resultsListView.SmallImageList = smallImageList;
             resultsListView.TabIndex = 2;
             resultsListView.UseCompatibleStateImageBehavior = false;
             // 
