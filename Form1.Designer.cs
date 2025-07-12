@@ -28,12 +28,70 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            components = new System.ComponentModel.Container();
+            searchTextBox = new TextBox();
+            searchButton = new Button();
+            resultsListView = new ListView();
+            smallImageList = new ImageList(components);
+            largeImageList = new ImageList(components);
+            SuspendLayout();
+            // 
+            // searchTextBox
+            // 
+            searchTextBox.Location = new Point(12, 12);
+            searchTextBox.Name = "searchTextBox";
+            searchTextBox.Size = new Size(695, 23);
+            searchTextBox.TabIndex = 0;
+            // 
+            // searchButton
+            // 
+            searchButton.Location = new Point(713, 12);
+            searchButton.Name = "searchButton";
+            searchButton.Size = new Size(75, 23);
+            searchButton.TabIndex = 1;
+            searchButton.Text = "button1";
+            searchButton.UseVisualStyleBackColor = true;
+            // 
+            // resultsListView
+            // 
+            resultsListView.Location = new Point(12, 41);
+            resultsListView.Name = "resultsListView";
+            resultsListView.Size = new Size(776, 159);
+            resultsListView.TabIndex = 2;
+            resultsListView.UseCompatibleStateImageBehavior = false;
+            // 
+            // smallImageList
+            // 
+            smallImageList.ColorDepth = ColorDepth.Depth32Bit;
+            smallImageList.ImageSize = new Size(16, 16);
+            smallImageList.TransparentColor = Color.Transparent;
+            // 
+            // largeImageList
+            // 
+            largeImageList.ColorDepth = ColorDepth.Depth32Bit;
+            largeImageList.ImageSize = new Size(16, 16);
+            largeImageList.TransparentColor = Color.Transparent;
+            // 
+            // Form1
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(resultsListView);
+            Controls.Add(searchButton);
+            Controls.Add(searchTextBox);
+            Name = "Form1";
+            Text = "Form1";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private TextBox searchTextBox;
+        private Button searchButton;
+        private ListView resultsListView;
+        private ImageList smallImageList;
+        private ImageList largeImageList;
     }
 }
